@@ -1100,9 +1100,6 @@ html {
   flex: 1 1 auto;
   gap: 1.25rem
 }
-.form__items:not(:last-child) {
-  margin-bottom: 2.5rem
-}
 .form__item {
   display: flex;
   flex-direction: column;
@@ -2126,6 +2123,9 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   .form__title {
     padding-bottom: 3.125rem
   }
+  .form__items:not(:last-child) {
+    margin-bottom: 2.5rem
+  }
   .form__item-click {
     font-size: 1.125rem
   }
@@ -2428,6 +2428,9 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   .form__title {
     padding-bottom: 1.5625rem
   }
+  .form__items:not(:last-child) {
+    margin-bottom: 1.5625rem
+  }
   .form__item-click {
     font-size: 1rem
   }
@@ -2441,7 +2444,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     font-size: .875rem
   }
   .faq {
-    padding-top: .625rem
+    padding-top: 3.125rem
   }
   .faq {
     padding-bottom: 1.5625rem
@@ -2660,6 +2663,9 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   .form__item-link img {
     width: 1.875rem;
     height: 1.875rem
+  }
+  .form__text {
+    display: none
   }
   .popup__submit-content {
     padding: .9375rem;
@@ -3444,6 +3450,16 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
       padding-bottom: calc(1.5625rem + 1.5625 * (100vw - 20rem)/ 62.5)
     }
   }
+  @supports (margin-bottom:clamp(1.5625rem ,1.2625rem + 1.5vw ,2.5rem)) {
+    .form__items:not(:last-child) {
+      margin-bottom: clamp(1.5625rem ,1.2625rem + 1.5vw ,2.5rem)
+    }
+  }
+  @supports not (margin-bottom:clamp(1.5625rem ,1.2625rem + 1.5vw ,2.5rem)) {
+    .form__items:not(:last-child) {
+      margin-bottom: calc(1.5625rem + .9375 * (100vw - 20rem)/ 62.5)
+    }
+  }
   @supports (font-size:clamp(1rem ,0.96rem + 0.2vw ,1.125rem)) {
     .form__item-click {
       font-size: clamp(1rem ,.96rem + .2vw ,1.125rem)
@@ -3484,14 +3500,14 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
       font-size: calc(.875rem + .125 * (100vw - 20rem)/ 62.5)
     }
   }
-  @supports (padding-top:clamp(0.625rem ,-1.175rem + 9vw ,6.25rem)) {
+  @supports (padding-top:clamp(3.125rem ,2.125rem + 5vw ,6.25rem)) {
     .faq {
-      padding-top: clamp(.625rem ,-1.175rem + 9vw ,6.25rem)
+      padding-top: clamp(3.125rem ,2.125rem + 5vw ,6.25rem)
     }
   }
-  @supports not (padding-top:clamp(0.625rem ,-1.175rem + 9vw ,6.25rem)) {
+  @supports not (padding-top:clamp(3.125rem ,2.125rem + 5vw ,6.25rem)) {
     .faq {
-      padding-top: calc(.625rem + 5.625 * (100vw - 20rem)/ 62.5)
+      padding-top: calc(3.125rem + 3.125 * (100vw - 20rem)/ 62.5)
     }
   }
   @supports (padding-bottom:clamp(1.5625rem ,1.0625rem + 2.5vw ,3.125rem)) {
