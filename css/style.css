@@ -1020,6 +1020,9 @@ html {
   color: rgba(143,133,118,.5);
   text-align: center
 }
+.stage__item-number:not(:last-child) {
+  margin-bottom: .625rem
+}
 .stage__item-descr {
   font-weight: 400;
   line-height: 1;
